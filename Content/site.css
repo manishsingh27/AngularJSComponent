@@ -1,0 +1,32 @@
+body {
+       margin: 20px 
+}
+
+.component-borders {
+      border-style: solid;
+      border-width: 1px;
+      border-color: darkgrey;
+      border-radius: 4px; 
+      padding: 10px;
+      margin: 10px;
+}
+
+a.link {
+      cursor: pointer; 
+}
+
+.active {
+       color: red; font-weight: bold; 
+}
+
+textarea.comment {
+      width: 100%;
+}
+
+span.comment {
+      margin-left: 15px;
+}
+
+div.comment {
+      margin-bottom: 5px;
+}

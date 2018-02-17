@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="col-md-3">
+        <h4>COURSE NAME</H4>
+    </div>
+</div>    
+<div class="row" ng-repeat="course in vm.author.Courses">
+    <div class="col-md-3">
+        <a ui-sref='course({ courseId: course.CourseId })'>
+            {{ course.CourseName }}
+        </a>
+    </div>
+</div>

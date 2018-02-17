@@ -1,0 +1,18 @@
+<div ng-if="vm.authenticationService.loggedIn">
+    <h4>COURSE DISCUSSION</h4>
+    <course-discussion-list course-discussion="vm.courseDiscussion"></course-discussion-list>
+    <hr />
+    <div class="row">
+        <div class="col-md-12">
+            <button type="button" class="btn btn-primary"
+                    ng-show="vm.commentEntryVisible == false"
+                    ng-click="vm.showCommentEntry()">Add Comment</button>
+        </div>
+    </div>
+    <course-discussion-item ng-show="vm.commentEntryVisible"
+                            comment-submitted="vm.commentSubmitted"
+                            comment-canceled="vm.commentCanceled"></course-discussion-item>
+</div>
+<div ng-if="!vm.authenticationService.loggedIn">
+    NOT LOGGED IN
+</div>

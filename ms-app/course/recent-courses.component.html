@@ -1,0 +1,27 @@
+<h3>RECENTLY VIEWED COURSES</h3>
+<hr />
+<div ng-if="vm.authenticationService.loggedIn">
+    <div ng-if="vm.recentlyViewed == null || vm.recentlyViewed.length == 0">
+        NO COURSES RECENTLY VIEWED
+    </div>
+    <div ng-if="vm.recentlyViewed != null && vm.recentlyViewed.length != 0">
+        <a ng-click='vm.clearList()' href>clear</a>
+        <div class="row">
+            <div class="col-md-5"><h4>COURSE NAME</h4></div>
+            <div class="col-md-3"><h4>AUTHOR</h4></div>
+            <div class="col-md-3"><h4>LAST VIEWED</h4></div>
+        </div>
+        <div class="row" ng-repeat="recentItem in vm.recentlyViewed">
+            <div class="col-md-5">
+                <a ui-sref='course({ courseId: recentItem.CourseId })'>
+                    {{ recentItem.Course.CourseName }}
+                </a>
+            </div>
+            <div class="col-md-3">{{ recentItem.Course.Author.FirstName + ' ' + recentItem.Course.Author.LastName }}</div>
+            <div class="col-md-3">{{ recentItem.ViewedOn | date : 'medium' }}</div>
+        </div>
+    </div>
+</div>
+<div ng-if="!vm.authenticationService.loggedIn">
+    NOT LOGGED IN
+</div>

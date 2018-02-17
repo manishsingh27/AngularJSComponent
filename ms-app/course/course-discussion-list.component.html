@@ -1,0 +1,14 @@
+<div ng-if="vm.courseDiscussion == null || vm.courseDiscussion.length == 0">
+    NO DISCUSSION COMMENTS FOR THIS COURSE
+</div>
+<div ng-if="vm.courseDiscussion != null && vm.courseDiscussion.length != 0">
+    <div class="row comment" ng-repeat="discussionItem in vm.courseDiscussion">
+        <div class="col-md-12">
+            <span>{{ discussionItem.User.FirstName + ' ' + discussionItem.User.LastName }}</span>
+            &nbsp;
+            <span>{{ discussionItem.EnteredOn | date : "medium" }}</span>
+            <br />
+            <span class="comment">{{ discussionItem.Comment }}</span>
+        </div>
+    </div>
+</div>

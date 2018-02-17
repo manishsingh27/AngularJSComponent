@@ -1,0 +1,21 @@
+<h3>COURSE LIST</h3>
+<hr />
+<div ng-if="vm.courses == null">
+    NO COURSES
+</div>
+<div ng-if="vm.courses != null">
+    <div class="row">
+        <div class="col-md-7"><h4>COURSE NAME</h4></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-3"><h4>AUTHOR NAME</h4></div>
+    </div>
+    <div class="row" ng-repeat="course in vm.courses">
+        <div class="col-md-7">
+            <a ui-sref='course({ courseId: course.CourseId })'>
+                {{ course.CourseName }}
+            </a>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-3">{{ course.Author.FirstName }} {{ course.Author.LastName }}</div>
+    </div>
+</div>
